@@ -39,7 +39,7 @@ function TodoList() {
         })
 
         setTodos(updatedTodos);
-    }
+    };
 
   return (
     <div>

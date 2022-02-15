@@ -31,6 +31,7 @@ function TodoForm(props) {
             <>
                 <input
                   type="text"
+                  maxLength={30}
                   placeholder="Atualizar um to-do"
                   value={input}
                   name="text"
@@ -41,6 +42,7 @@ function TodoForm(props) {
             <>
                 <input
                     type="text"
+                    maxLength={30}
                     placeholder="Adicionar um to-do"
                     value={input}
                     name="text"
