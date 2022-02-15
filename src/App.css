@@ -9,8 +9,8 @@
   body {
     background: linear-gradient(
       90deg,
-      rgba(48, 16, 255, 1) 0%,
-      rgba(100, 115, 255, 1) 100%
+      rgb(29, 20, 77) 0%,
+      rgb(18, 34, 180) 100%
     );
   }
   .todo-app {
@@ -67,7 +67,6 @@
       rgba(155, 0, 250, 1) 100%
     );
     color: #fff;
-    text-transform: capitalize;
   }
   
   .todo-input.edit {
