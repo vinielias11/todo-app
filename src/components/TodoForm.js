@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 function TodoForm(props) {
-    const [input, setInput] = useState('');
+    const [input, setInput] = useState(props.edit ? props.edit.value : '');
+
+    const inputRef = useRef(null);
+
+    useEffect(() => {
+        inputRef.current.focus();
+    });
 
     const handleChange = e => {
         setInput(e.target.value);
@@ -10,10 +16,10 @@ function TodoForm(props) {
     const handleSubmit = e => {
         e.preventDefault();
 
-        // props.onSubmit({
-        //     id: Math.floor(Math.random() * 10000),
-        //     text: input
-        // });
+        props.onSubmit({
+            id: Math.floor(Math.random() * 10000),
+            text: input
+        });
 
         setInput('');
     };
@@ -21,16 +27,29 @@ function TodoForm(props) {
   return (
     <div>
         <form className="todo-form" onSubmit={handleSubmit}>
-            <input 
-                type="text" 
-                placeholder="Adicionar um todo" 
-                value={input} 
-                name="text" 
-                className="todo-input"
-                onChange={handleChange}
-                />
+            { props.edit ? ( 
+            <>
+                <input
+                  type="text"
+                  placeholder="Atualizar um todo"
+                  value={input}
+                  name="text"
+                  className="todo-input edit"
+                  onChange={handleChange}
+                  ref={inputRef} /><button onClick={handleSubmit} className="todo-button edit">Atualizar</button>
+            </>) : (
+            <>
+                <input
+                    type="text"
+                    placeholder="Adicionar um todo"
+                    value={input}
+                    name="text"
+                    className="todo-input"
+                    onChange={handleChange}
+                    ref={inputRef} /><button onClick={handleSubmit} className="todo-button">Adicionar todo</button>
+            </> )}
+            
         </form>
-        <button className="todo-button">Adicionar todo</button>
     </div>
   )
 }
