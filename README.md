@@ -4,6 +4,8 @@
 
 Pequeno projeto para treinar React. Consiste em um app básico de to-do list.
 
+Possui as opções de adicionar um to-do, editá-lo, deletá-lo e marcá-lo como concluído.
+
 <h3>Tecnologias utilizadas</h3>
 <li>ReactJS</li>
 <li>CSS</li>
