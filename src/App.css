@@ -190,3 +190,7 @@
     transition-delay: 0s;
     color: rgb(50, 50, 50)
   }
+
+  html::-webkit-scrollbar {
+    display: none;
+  }
