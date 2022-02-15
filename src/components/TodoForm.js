@@ -31,22 +31,22 @@ function TodoForm(props) {
             <>
                 <input
                   type="text"
-                  placeholder="Atualizar um todo"
+                  placeholder="Atualizar um to-do"
                   value={input}
                   name="text"
                   className="todo-input edit"
                   onChange={handleChange}
-                  ref={inputRef} /><button onClick={handleSubmit} className="todo-button edit">Atualizar</button>
+                  ref={inputRef} /><button className="todo-button edit">Atualizar</button>
             </>) : (
             <>
                 <input
                     type="text"
-                    placeholder="Adicionar um todo"
+                    placeholder="Adicionar um to-do"
                     value={input}
                     name="text"
                     className="todo-input"
                     onChange={handleChange}
-                    ref={inputRef} /><button onClick={handleSubmit} className="todo-button">Adicionar todo</button>
+                    ref={inputRef} /><button className="todo-button">Adicionar to-do</button>
             </> )}
             
         </form>
